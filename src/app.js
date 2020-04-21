@@ -86,12 +86,31 @@ app.get('/help/*', (req, res) => {
 
 const testPage = 'test'
 const testURL = '/' + testPage
+const title = [
+    {
+        title: 'Title 1',
+        message: 'Message 1',
+        name: 'Dan Robinson'
+    }, {
+        title: 'Title 2',
+        message: 'Message 2',
+        name: 'Danny Boy!!!'
+    }
+]
 
 app.get(testURL, (req, res) => {
     res.render('help', {
-        title: 'It WORKED!!!',
-        message: 'Can create page URLs from variable',
-        name: 'Daniel Robinson'
+        title: title[0].title,
+        message: title[0].message,
+        name: title[0].name
+    })
+})
+
+app.get('/test1', (req, res) => {
+    res.render('help', {
+        title: title[1].title,
+        message: title[1].message,
+        name: title[1].name
     })
 })
 
