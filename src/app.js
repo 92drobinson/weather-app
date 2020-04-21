@@ -84,6 +84,17 @@ app.get('/help/*', (req, res) => {
     })
 })
 
+const testPage = 'test'
+const testURL = '/' + testPage
+
+app.get(testURL, (req, res) => {
+    res.render('help', {
+        title: 'It WORKED!!!',
+        message: 'Can create page URLs from variable',
+        name: 'Daniel Robinson'
+    })
+})
+
 app.get('*', (req, res) => {
     res.render('404', {
         title: '404 Page Not Found',
