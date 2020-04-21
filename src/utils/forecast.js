@@ -8,7 +8,7 @@ const forecast = (lat, lon, callback) => {
         } else if (body.error) {
             callback('Invalid location. Try a new search.')
         } else {
-            callback(undefined, 'Weather Description: ' + body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + ' degrees. It feels like ' + body.current.feelslike + ' degrees. The wind direction is ' + body.current.wind_dir + ', and is blowing at ' + body.current.wind_speed + ' mph.')
+            callback(undefined, 'Weather Description: ' + body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + ' degrees. It feels like ' + body.current.feelslike + ' degrees. The wind direction is ' + body.current.wind_dir + ', and is blowing at ' + body.current.wind_speed + ' kph.')
         }
     })
 
